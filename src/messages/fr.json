@@ -1,0 +1,154 @@
+{
+  "meta": {
+    "title": "Sweet Lab — Pâtisserie de luxe à Milan",
+    "description": "Haute pâtisserie artisanale au cœur de Milan. Où la science rencontre la douceur."
+  },
+  "nav": {
+    "about": "À propos",
+    "products": "Créations",
+    "gallery": "Galerie",
+    "contact": "Contact",
+    "reservations": "Réservations",
+    "home": "Accueil"
+  },
+  "common": {
+    "learnMore": "En savoir plus",
+    "viewAll": "Voir tout",
+    "from": "à partir de",
+    "submit": "Envoyer",
+    "sending": "Envoi en cours…",
+    "success": "Message envoyé avec succès",
+    "bookNow": "Réserver",
+    "close": "Fermer",
+    "all": "Tous",
+    "photoCredit": "Photo par",
+    "newsletter": "Newsletter",
+    "newsletterPlaceholder": "Votre email",
+    "subscribe": "S'inscrire",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu"
+  },
+  "notFound": {
+    "title": "Page introuvable",
+    "description": "La page que vous recherchez n'existe pas ou a été déplacée."
+  },
+  "home": {
+    "heroTagline": "Où la science rencontre la douceur",
+    "heroSubtitle": "Haute pâtisserie artisanale au cœur de Milan, où chaque création est le fruit de la précision, de la recherche et de la tradition.",
+    "heroCta": "Découvrir nos créations",
+    "manifesto": {
+      "line1": "Nous ne suivons pas les tendances.",
+      "line2": "Nous étudions les ingrédients, la température et le temps.",
+      "line3": "Chaque dessert est une expérience réussie."
+    },
+    "creationsTitle": "Créations signature",
+    "creationsSubtitle": "Les chefs-d'œuvre qui définissent Sweet Lab",
+    "laboratoryTitle": "Le Laboratoire",
+    "laboratoryText": "Fondée en 2018 par Elena Marchetti, formée à l'École Grégoire Ferrandi de Paris, Sweet Lab allie rigueur scientifique et sensibilité artisanale dans chaque création.",
+    "laboratoryCta": "Notre histoire",
+    "galleryTitle": "Galerie",
+    "gallerySubtitle": "Un regard sur notre atelier",
+    "visitTitle": "Visitez Sweet Lab",
+    "visitSubtitle": "Nous vous attendons Via della Spiga",
+    "visitCta": "Comment nous trouver"
+  },
+  "about": {
+    "title": "À propos",
+    "subtitle": "L'histoire de Sweet Lab",
+    "heroText": "Un laboratoire de pâtisserie où la précision française rencontre l'âme milanaise.",
+    "timelineTitle": "Notre histoire",
+    "valuesTitle": "Nos valeurs",
+    "teamTitle": "L'équipe",
+    "timeline": {
+      "2018": "Elena Marchetti ouvre Sweet Lab Via della Spiga après sa formation à Paris.",
+      "2020": "Introduction du laboratoire visible et des dégustations sur réservation.",
+      "2022": "Reconnue comme meilleure pâtisserie artisanale de Milan.",
+      "2024": "Expansion de la ligne saisonnière et collaborations avec maîtres chocolatiers."
+    },
+    "values": {
+      "ingredients": {
+        "title": "Ingrédients",
+        "text": "Beurre AOP, vanille Bourbon, pistache de Bronte et chocolat bean-to-bar sélectionné."
+      },
+      "precision": {
+        "title": "Précision",
+        "text": "Chaque recette est calibrée au gramme, avec contrôle thermique et processus reproductibles."
+      },
+      "tradition": {
+        "title": "Tradition",
+        "text": "Techniques classiques de la grande pâtisserie française, réinterprétées avec sensibilité contemporaine."
+      }
+    },
+    "team": {
+      "elena": {
+        "name": "Elena Marchetti",
+        "role": "Fondatrice & Chef Pâtissière",
+        "bio": "Formée à Paris, elle dirige Sweet Lab avec vision scientifique et passion artisanale."
+      },
+      "marco": {
+        "name": "Marco Vitale",
+        "role": "Chef Chocolatier",
+        "bio": "Spécialiste du tempérage et du praliné, il supervise la ligne chocolat de la maison."
+      },
+      "sofia": {
+        "name": "Sofia Laurent",
+        "role": "Responsable Salon",
+        "bio": "Accueille les hôtes et coordonne dégustations et événements privés."
+      }
+    }
+  },
+  "products": {
+    "title": "Créations",
+    "subtitle": "Le catalogue de la maison",
+    "categories": {
+      "dryPastry": "Pâtisserie sèche",
+      "mousse": "Mousse",
+      "chocolate": "Chocolat",
+      "seasonal": "Saisonniers"
+    }
+  },
+  "gallery": {
+    "title": "Galerie",
+    "subtitle": "Images de notre atelier",
+    "categories": {
+      "interiors": "Intérieurs",
+      "creations": "Créations",
+      "details": "Détails",
+      "laboratory": "Laboratoire"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Nous sommes à votre disposition",
+    "formTitle": "Écrivez-nous",
+    "name": "Nom",
+    "email": "Email",
+    "message": "Message",
+    "infoTitle": "Informations",
+    "address": "Adresse",
+    "phone": "Téléphone",
+    "hours": "Horaires",
+    "hoursWeekdays": "Mar–Sam : 8h00–20h00",
+    "hoursSunday": "Dim : 9h00–14h00",
+    "hoursMonday": "Lun : fermé",
+    "mapTitle": "Où nous trouver"
+  },
+  "reservations": {
+    "title": "Réservations",
+    "subtitle": "Dégustations et événements privés",
+    "intro": "Réservez une dégustation guidée dans notre laboratoire ou un événement privé au salon Sweet Lab.",
+    "date": "Date",
+    "time": "Heure",
+    "guests": "Nombre d'invités",
+    "notes": "Notes supplémentaires",
+    "email": "Email",
+    "success": "Réservation reçue. Nous vous contacterons sous 24 heures."
+  },
+  "footer": {
+    "tagline": "Haute pâtisserie artisanale",
+    "hoursTitle": "Horaires",
+    "contactTitle": "Contact",
+    "navTitle": "Navigation",
+    "credits": "Images de Unsplash"
+  }
+}
