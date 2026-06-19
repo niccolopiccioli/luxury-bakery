@@ -5,24 +5,18 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { siteConfig } from "@/data/site";
 import { getProductBySlug } from "@/data/products";
-import { getOfferBySlug } from "@/data/offers";
 import { Section, SectionHeader } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { RevealOnScroll } from "@/components/motion/RevealOnScroll";
 import { getDirectionsUrl, getMailtoUrl, phoneTel } from "@/lib/site-links";
-import { getLocalizedField } from "@/lib/utils";
 import type { Locale } from "@/i18n/routing";
 import { useLocale } from "next-intl";
 
 type ContactPageContentProps = {
   productSlug?: string;
-  offerSlug?: string;
 };
 
-export function ContactPageContent({
-  productSlug,
-  offerSlug,
-}: ContactPageContentProps) {
+export function ContactPageContent({ productSlug }: ContactPageContentProps) {
   const t = useTranslations("contact");
   const tCommon = useTranslations("common");
   const locale = useLocale() as Locale;
@@ -31,7 +25,6 @@ export function ContactPageContent({
   const [error, setError] = useState(false);
 
   const product = productSlug ? getProductBySlug(productSlug) : undefined;
-  const offer = offerSlug ? getOfferBySlug(offerSlug) : undefined;
 
   const defaultMessage = useMemo(() => {
     if (product) {
@@ -43,18 +36,8 @@ export function ContactPageContent({
             ? `Bonjour, je souhaiterais des informations sur "${product.name}".`
             : `Hola, me gustaría información sobre "${product.name}".`;
     }
-    if (offer) {
-      const title = getLocalizedField(offer.title, locale);
-      return locale === "it"
-        ? `Buongiorno, sono interessato/a a: ${title}.`
-        : locale === "en"
-          ? `Hello, I am interested in: ${title}.`
-          : locale === "fr"
-            ? `Bonjour, je suis intéressé(e) par : ${title}.`
-            : `Hola, estoy interesado/a en: ${title}.`;
-    }
     return "";
-  }, [product, offer, locale]);
+  }, [product, locale]);
 
   const mapSrc = `https://maps.google.com/maps?q=${siteConfig.coordinates.lat},${siteConfig.coordinates.lng}&z=15&output=embed`;
 
@@ -74,7 +57,6 @@ export function ContactPageContent({
           email: data.get("email"),
           message: data.get("message"),
           product: productSlug,
-          offer: offerSlug,
           website: data.get("website"),
         }),
       });
@@ -95,12 +77,6 @@ export function ContactPageContent({
         {product && (
           <p className="mb-8 text-copper">
             {t("inquiryTitle")}: <strong>{product.name}</strong>
-          </p>
-        )}
-        {offer && !product && (
-          <p className="mb-8 text-copper">
-            {t("inquiryOffer")}:{" "}
-            <strong>{getLocalizedField(offer.title, locale)}</strong>
           </p>
         )}
 

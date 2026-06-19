@@ -4,7 +4,6 @@ import { generatePageMetadata } from "@/lib/generate-page-metadata";
 
 type Props = {
   params: Promise<{ locale: string }>;
-  searchParams: Promise<{ experience?: string }>;
 };
 
 export async function generateMetadata({ params }: Props) {
@@ -15,10 +14,9 @@ export async function generateMetadata({ params }: Props) {
   });
 }
 
-export default async function ReservationsPage({ params, searchParams }: Props) {
+export default async function ReservationsPage({ params }: Props) {
   const { locale } = await params;
-  const { experience } = await searchParams;
   setRequestLocale(locale);
 
-  return <ReservationsPageContent experienceSlug={experience} />;
+  return <ReservationsPageContent />;
 }

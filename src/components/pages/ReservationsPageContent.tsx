@@ -1,41 +1,17 @@
 "use client";
 
-import { useMemo, useState, type FormEvent } from "react";
-import { useLocale, useTranslations } from "next-intl";
-import { getOfferBySlug } from "@/data/offers";
+import { useState, type FormEvent } from "react";
+import { useTranslations } from "next-intl";
 import { Section, SectionHeader } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { RevealOnScroll } from "@/components/motion/RevealOnScroll";
-import { getLocalizedField } from "@/lib/utils";
-import type { Locale } from "@/i18n/routing";
 
-type ReservationsPageContentProps = {
-  experienceSlug?: string;
-};
-
-export function ReservationsPageContent({
-  experienceSlug,
-}: ReservationsPageContentProps) {
+export function ReservationsPageContent() {
   const t = useTranslations("reservations");
   const tCommon = useTranslations("common");
-  const locale = useLocale() as Locale;
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
-
-  const experience = experienceSlug ? getOfferBySlug(experienceSlug) : undefined;
-
-  const defaultNotes = useMemo(() => {
-    if (!experience) return "";
-    const title = getLocalizedField(experience.title, locale);
-    return locale === "it"
-      ? `Interessato/a a: ${title}`
-      : locale === "en"
-        ? `Interested in: ${title}`
-        : locale === "fr"
-          ? `Intéressé(e) par : ${title}`
-          : `Interesado/a en: ${title}`;
-  }, [experience, locale]);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -54,7 +30,6 @@ export function ReservationsPageContent({
           guests: data.get("guests"),
           email: data.get("email"),
           notes: data.get("notes"),
-          experience: experienceSlug,
           website: data.get("website"),
         }),
       });
@@ -73,13 +48,6 @@ export function ReservationsPageContent({
 
       <RevealOnScroll>
         <p className="mb-10 max-w-2xl text-espresso/70">{t("intro")}</p>
-
-        {experience && (
-          <p className="mb-8 text-copper">
-            {t("experienceLabel")}:{" "}
-            <strong>{getLocalizedField(experience.title, locale)}</strong>
-          </p>
-        )}
 
         {submitted ? (
           <p className="text-lg text-copper">{t("success")}</p>
@@ -146,7 +114,6 @@ export function ReservationsPageContent({
                 id="notes"
                 name="notes"
                 rows={4}
-                defaultValue={defaultNotes}
                 className="mt-2 w-full resize-none border-b border-espresso/20 bg-transparent py-3 text-espresso outline-none focus:border-copper"
               />
             </div>

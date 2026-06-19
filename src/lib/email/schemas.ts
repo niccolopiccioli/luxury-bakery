@@ -5,7 +5,6 @@ export const contactSchema = z.object({
   email: z.string().email(),
   message: z.string().min(10).max(5000),
   product: z.string().optional(),
-  offer: z.string().optional(),
   website: z.string().optional(),
 });
 
@@ -15,7 +14,6 @@ export const reservationSchema = z.object({
   guests: z.coerce.number().int().min(1).max(12),
   email: z.string().email(),
   notes: z.string().max(2000).optional(),
-  experience: z.string().optional(),
   website: z.string().optional(),
 });
 

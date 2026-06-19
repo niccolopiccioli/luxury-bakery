@@ -15,13 +15,11 @@ export async function POST(request: Request) {
       return NextResponse.json({ ok: true });
     }
 
-    const { name, email, message, product, offer } = parsed.data;
+    const { name, email, message, product } = parsed.data;
     const resend = getResendClient();
     const { from, to } = getEmailConfig();
 
-    const context = [product && `Product: ${product}`, offer && `Offer: ${offer}`]
-      .filter(Boolean)
-      .join("<br>");
+    const context = product ? `Product: ${product}` : "";
 
     const body = `
       <p><strong>From:</strong> ${name} &lt;${email}&gt;</p>

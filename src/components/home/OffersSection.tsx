@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { featuredOffers } from "@/data/offers";
 import { Link } from "@/i18n/navigation";
@@ -39,11 +38,7 @@ export function OffersSection() {
                 })}
               </p>
               <Link
-                href={
-                  offer.slug === "spring-tasting"
-                    ? { pathname: "/prenotazioni", query: { experience: offer.slug } }
-                    : offer.ctaHref
-                }
+                href={offer.ctaHref}
                 className="mt-6 inline-block text-sm tracking-wide text-copper uppercase transition-colors hover:text-espresso"
               >
                 {t("learnMore")} →
@@ -53,49 +48,5 @@ export function OffersSection() {
         ))}
       </div>
     </Section>
-  );
-}
-
-const BANNER_KEY = "sweetlab-offer-banner-dismissed";
-
-export function OffersBanner() {
-  const t = useTranslations("offers");
-  const locale = useLocale() as Locale;
-  const [visible, setVisible] = useState(() => {
-    if (typeof window === "undefined") return false;
-    return localStorage.getItem(BANNER_KEY) !== "1";
-  });
-  const offer = featuredOffers[0];
-
-  if (!visible || !offer) return null;
-
-  const dismiss = () => {
-    localStorage.setItem(BANNER_KEY, "1");
-    setVisible(false);
-  };
-
-  return (
-    <div className="relative bg-espresso px-6 py-3 text-center text-cream md:px-12">
-      <p className="text-sm md:text-base">
-        <span className="font-medium text-copper">
-          {getLocalizedField(offer.badge, locale)}:
-        </span>{" "}
-        {getLocalizedField(offer.title, locale)} —{" "}
-        <Link
-          href={{ pathname: "/prenotazioni", query: { experience: offer.slug } }}
-          className="underline underline-offset-4 hover:text-copper"
-        >
-          {t("bannerCta")}
-        </Link>
-      </p>
-      <button
-        type="button"
-        onClick={dismiss}
-        className="absolute top-1/2 right-4 -translate-y-1/2 text-xs tracking-widest uppercase text-cream/60 hover:text-cream"
-        aria-label={t("dismiss")}
-      >
-        ✕
-      </button>
-    </div>
   );
 }

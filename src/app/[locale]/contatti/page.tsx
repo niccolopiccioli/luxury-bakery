@@ -4,7 +4,7 @@ import { generatePageMetadata } from "@/lib/generate-page-metadata";
 
 type Props = {
   params: Promise<{ locale: string }>;
-  searchParams: Promise<{ product?: string; offer?: string }>;
+  searchParams: Promise<{ product?: string }>;
 };
 
 export async function generateMetadata({ params }: Props) {
@@ -13,8 +13,8 @@ export async function generateMetadata({ params }: Props) {
 
 export default async function ContactPage({ params, searchParams }: Props) {
   const { locale } = await params;
-  const { product, offer } = await searchParams;
+  const { product } = await searchParams;
   setRequestLocale(locale);
 
-  return <ContactPageContent productSlug={product} offerSlug={offer} />;
+  return <ContactPageContent productSlug={product} />;
 }

@@ -15,7 +15,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ ok: true });
     }
 
-    const { date, time, guests, email, notes, experience } = parsed.data;
+    const { date, time, guests, email, notes } = parsed.data;
     const resend = getResendClient();
     const { from, to } = getEmailConfig();
 
@@ -23,7 +23,6 @@ export async function POST(request: Request) {
       <p><strong>Email:</strong> ${email}</p>
       <p><strong>Date:</strong> ${date} at ${time}</p>
       <p><strong>Guests:</strong> ${guests}</p>
-      ${experience ? `<p><strong>Experience:</strong> ${experience}</p>` : ""}
       ${notes ? `<p style="white-space:pre-wrap;"><strong>Notes:</strong><br>${notes}</p>` : ""}
     `;
 
