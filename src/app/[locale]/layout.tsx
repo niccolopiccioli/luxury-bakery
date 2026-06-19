@@ -53,7 +53,7 @@ export default async function LocaleLayout({ children, params }: Props) {
             <GsapScrollCleanup />
             <div className="grain-overlay" aria-hidden="true" />
             <Header />
-            <main className="flex-1 pb-24">
+            <main className="flex-1">
               <PageTransition>{children}</PageTransition>
             </main>
             <Footer />

@@ -14,7 +14,7 @@ export function Footer() {
   const tCommon = useTranslations("common");
 
   return (
-    <footer className="border-t border-espresso/10 bg-espresso px-6 py-16 text-cream md:px-12 lg:px-20">
+    <footer className="border-t border-espresso/10 bg-espresso px-6 pb-28 pt-16 text-cream md:px-12 lg:px-20">
       <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-2 lg:grid-cols-5">
         <div className="lg:col-span-2">
           <p className="font-display text-3xl">Sweet Lab</p>
