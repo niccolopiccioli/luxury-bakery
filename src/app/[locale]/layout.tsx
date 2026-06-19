@@ -5,9 +5,13 @@ import { Cormorant_Garamond, Outfit } from "next/font/google";
 import { routing } from "@/i18n/routing";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { ConciergeBar } from "@/components/layout/ConciergeBar";
+import { OffersBanner } from "@/components/home/OffersSection";
 import { SmoothScrollProvider } from "@/components/motion/SmoothScrollProvider";
 import { GsapScrollCleanup } from "@/components/motion/GsapScrollCleanup";
 import { PageTransition } from "@/components/motion/PageTransition";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { getLocalBusinessSchema } from "@/lib/structured-data";
 import "../globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -44,15 +48,18 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <html lang={locale} className={`${cormorant.variable} ${outfit.variable} h-full`}>
       <body className="min-h-full bg-cream font-body text-espresso antialiased">
+        <JsonLd data={getLocalBusinessSchema()} />
         <NextIntlClientProvider messages={messages}>
           <SmoothScrollProvider>
             <GsapScrollCleanup />
             <div className="grain-overlay" aria-hidden="true" />
+            <OffersBanner />
             <Header />
-            <main className="flex-1">
+            <main className="flex-1 pb-24">
               <PageTransition>{children}</PageTransition>
             </main>
             <Footer />
+            <ConciergeBar />
           </SmoothScrollProvider>
         </NextIntlClientProvider>
       </body>

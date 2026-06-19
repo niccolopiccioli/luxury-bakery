@@ -12,14 +12,17 @@ const routes = [
   "/es",
   "/it/chi-siamo",
   "/it/creazioni",
+  "/it/creazioni/saint-honore",
   "/it/galleria",
   "/it/contatti",
   "/it/prenotazioni",
+  "/it/faq",
   "/en/chi-siamo",
   "/en/creazioni",
   "/en/galleria",
   "/en/contatti",
   "/en/prenotazioni",
+  "/en/faq",
 ];
 
 const { images } = await import("../src/lib/images.ts");
@@ -58,6 +61,17 @@ for (const url of imageUrls.slice(0, 8)) {
   }
 }
 console.log(`Checked ${Math.min(8, imageUrls.length)} optimizer URLs`);
+
+console.log("\n=== SEO endpoints ===");
+for (const path of ["/sitemap.xml", "/robots.txt"]) {
+  const res = await fetch(`${BASE}${path}`);
+  if (res.status !== 200) {
+    failed = true;
+    console.log(`FAIL ${res.status} ${path}`);
+  } else {
+    console.log(`OK   ${res.status} ${path}`);
+  }
+}
 
 if (failed) {
   console.error("\nSome checks FAILED");

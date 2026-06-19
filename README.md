@@ -29,13 +29,27 @@ The root `/` automatically redirects to `/it`.
 
 | Route | Content |
 |-------|---------|
-| `/[locale]` | Homepage: preloader, animated hero, pinned manifesto scroll, horizontal creations carousel, laboratory section, gallery teaser, visit CTA |
+| `/[locale]` | Homepage: hero, manifesto, creations, press strip, testimonials, seasonal offers, gallery teaser, visit CTA |
 | `/[locale]/chi-siamo` | Brand timeline, values, team |
 | `/[locale]/creazioni` | Product grid with category filters |
+| `/[locale]/creazioni/[slug]` | Product detail + inquiry CTA |
 | `/[locale]/galleria` | Masonry grid, lightbox, category filters |
-| `/[locale]/contatti` | Mock contact form + info block and map placeholder |
-| `/[locale]/prenotazioni` | Mock table reservation form |
+| `/[locale]/faq` | FAQ accordion (allergens, reservations, gifts…) |
+| `/[locale]/contatti` | Contact form (Resend) + map + directions |
+| `/[locale]/prenotazioni` | Reservation form (Resend) with experience pre-fill |
 | Localized 404 | Not-found page translated in all 4 languages |
+
+---
+
+## Customer acquisition (no auth)
+
+- **Concierge bar** — sticky Book / WhatsApp / Call on every page
+- **Trust** — testimonials carousel, press strip, FAQ page
+- **Offers** — dismissible banner + homepage seasonal experiences
+- **Product funnel** — detail pages with pre-filled contact inquiries
+- **Newsletter** — footer signup via Resend Contacts API
+- **Lead capture** — `/api/contact`, `/api/reservations`, `/api/newsletter` (Resend)
+- **Local SEO** — sitemap, robots, Open Graph, JSON-LD (Bakery, Product, FAQPage)
 
 ---
 
@@ -76,6 +90,7 @@ A visual concept blending artisan warmth with laboratory precision.
 | i18n | [next-intl 4](https://next-intl.dev) — routing, messages, localized metadata |
 | Motion | [GSAP 3](https://gsap.com), [Framer Motion 12](https://motion.dev), [Lenis](https://lenis.darkroom.engineering) |
 | Images | `next/image` + centralized URLs in `src/lib/images.ts` |
+| Email | [Resend](https://resend.com) — contact, reservations, newsletter |
 | Deploy | [Vercel](https://vercel.com) (production) · [Render](https://render.com) (`render.yaml` included) |
 
 ---
@@ -118,6 +133,12 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) — you will be redirected to `/it`.
+
+Copy `.env.example` to `.env.local` and add your [Resend API key](https://resend.com/api-keys) for live form delivery.
+
+```bash
+cp .env.example .env.local
+```
 
 ### Available scripts
 
@@ -182,15 +203,20 @@ To add a language: extend `src/i18n/routing.ts`, create the messages file, and r
 
 ## Current limitations
 
-This is a **front-end skeleton**. Not included:
+Forms work without Resend configured (API returns success but skips email). For production, set these **Vercel environment variables**:
 
-- Backend / form email delivery
-- CMS or admin panel
-- E-commerce and payments
-- Analytics
-- Blog
+- `RESEND_API_KEY`
+- `RESEND_FROM_EMAIL` (verified domain)
+- `RESEND_TO_EMAIL`
+- `RESEND_AUDIENCE_ID` (newsletter)
+- `NEXT_PUBLIC_SITE_URL`
 
-Contact and reservation forms simulate submission on the client side.
+Still out of scope:
+
+- User accounts / login
+- E-commerce checkout / payments
+- CMS admin panel
+- Analytics / cookie consent
 
 ---
 

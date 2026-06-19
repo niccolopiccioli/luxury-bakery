@@ -7,7 +7,7 @@ type Props = {
 };
 
 export async function generateMetadata({ params }: Props) {
-  return generatePageMetadata({ params, namespace: "about" });
+  return generatePageMetadata({ params, namespace: "about", path: "/chi-siamo" });
 }
 
 export default async function AboutPage({ params }: Props) {

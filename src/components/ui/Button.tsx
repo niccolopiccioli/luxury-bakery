@@ -2,9 +2,11 @@ import { cn } from "@/lib/utils";
 import { Link } from "@/i18n/navigation";
 import type { ComponentProps } from "react";
 
+type LinkHref = ComponentProps<typeof Link>["href"];
+
 type ButtonProps = ComponentProps<"button"> & {
   variant?: "primary" | "secondary" | "ghost";
-  href?: string;
+  href?: LinkHref;
 };
 
 const variants = {
@@ -30,7 +32,7 @@ export function Button({
 
   if (href) {
     return (
-      <Link href={href as "/"} className={classes}>
+      <Link href={href} className={classes}>
         {children}
       </Link>
     );

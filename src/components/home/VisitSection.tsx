@@ -5,6 +5,7 @@ import { siteConfig } from "@/data/site";
 import { Section, SectionHeader } from "@/components/ui/Section";
 import { RevealOnScroll } from "@/components/motion/RevealOnScroll";
 import { Button } from "@/components/ui/Button";
+import { getDirectionsUrl } from "@/lib/site-links";
 
 export function VisitSection() {
   const t = useTranslations("home");
@@ -40,9 +41,20 @@ export function VisitSection() {
                 <li>{tContact("hoursMonday")}</li>
               </ul>
             </div>
-            <Button href="/contatti" variant="secondary">
-              {t("visitCta")}
-            </Button>
+            <div className="flex flex-wrap gap-4">
+              <Button href="/contatti" variant="secondary">
+                {t("visitCta")}
+              </Button>
+              <Button href="/prenotazioni">{t("visitBookCta")}</Button>
+              <a
+                href={getDirectionsUrl()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-2 py-3 text-sm tracking-wide text-copper uppercase transition-colors hover:text-espresso"
+              >
+                {tContact("directions")} →
+              </a>
+            </div>
           </div>
         </RevealOnScroll>
 

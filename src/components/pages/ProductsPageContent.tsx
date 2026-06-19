@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLocale, useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { products, productCategories, type ProductCategory } from "@/data/products";
 import { Section, SectionHeader } from "@/components/ui/Section";
 import { RevealOnScroll } from "@/components/motion/RevealOnScroll";
@@ -68,26 +69,28 @@ export function ProductsPageContent() {
                 transition={{ duration: 0.3 }}
               >
                 <RevealOnScroll>
-                  <div className="relative aspect-square overflow-hidden">
-                    <Image
-                      src={product.image}
-                      alt={getLocalizedField(product.imageAlt, locale)}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                    />
-                  </div>
-                  <div className="mt-4">
-                    <h3 className="font-display text-xl text-espresso">
-                      {product.name}
-                    </h3>
-                    <p className="mt-2 text-sm text-espresso/70">
-                      {getLocalizedField(product.description, locale)}
-                    </p>
-                    <p className="mt-3 text-sm text-copper">
-                      {tCommon("from")} {formatPrice(product.price, locale)}
-                    </p>
-                  </div>
+                  <Link href={`/creazioni/${product.slug}`} className="group block">
+                    <div className="relative aspect-square overflow-hidden">
+                      <Image
+                        src={product.image}
+                        alt={getLocalizedField(product.imageAlt, locale)}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                      />
+                    </div>
+                    <div className="mt-4">
+                      <h3 className="font-display text-xl text-espresso group-hover:text-copper">
+                        {product.name}
+                      </h3>
+                      <p className="mt-2 text-sm text-espresso/70">
+                        {getLocalizedField(product.description, locale)}
+                      </p>
+                      <p className="mt-3 text-sm text-copper">
+                        {tCommon("from")} {formatPrice(product.price, locale)}
+                      </p>
+                    </div>
+                  </Link>
                 </RevealOnScroll>
               </motion.article>
             ))}

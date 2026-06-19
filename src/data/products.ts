@@ -10,6 +10,8 @@ export type Product = {
   category: ProductCategory;
   name: string;
   description: Record<"it" | "en" | "fr" | "es", string>;
+  details?: Record<"it" | "en" | "fr" | "es", string>;
+  allergens?: Record<"it" | "en" | "fr" | "es", string>;
   price: number;
   image: string;
   imageAlt: Record<"it" | "en" | "fr" | "es", string>;
@@ -44,6 +46,18 @@ export const products: Product[] = [
     },
     featured: true,
     credit: { photographer: "Syd Wachs", url: "https://unsplash.com/@sydiw" },
+    details: {
+      it: "Il nostro Saint-Honoré reinterpreta il classico francese con choux caramellati uno a uno, crema mousseline alla vaniglia Bourbon e decorazione in perle di zucchero. Servito in porzione individuale.",
+      en: "Our Saint-Honoré reinterprets the French classic with individually caramelized choux, Bourbon vanilla mousseline and sugar pearl decoration. Served as an individual portion.",
+      fr: "Notre Saint-Honoré réinterprète le classique français avec des choux caramélisés un par un, mousseline à la vanille Bourbon et décoration en perles de sucre.",
+      es: "Nuestro Saint-Honoré reinterpreta el clásico francés con choux caramelizados uno a uno, mousseline de vainilla Bourbon y decoración de perlas de azúcar.",
+    },
+    allergens: {
+      it: "Glutine, latte, uova. Può contenere tracce di frutta a guscio.",
+      en: "Gluten, milk, eggs. May contain traces of tree nuts.",
+      fr: "Gluten, lait, œufs. Peut contenir des traces de fruits à coque.",
+      es: "Gluten, leche, huevos. Puede contener trazas de frutos secos.",
+    },
   },
   {
     id: "2",
@@ -289,3 +303,15 @@ export const productCategories: ProductCategory[] = [
   "chocolate",
   "seasonal",
 ];
+
+export function getProductBySlug(slug: string) {
+  return products.find((p) => p.slug === slug);
+}
+
+export function getRelatedProducts(slug: string, limit = 3) {
+  const product = getProductBySlug(slug);
+  if (!product) return [];
+  return products
+    .filter((p) => p.slug !== slug && p.category === product.category)
+    .slice(0, limit);
+}

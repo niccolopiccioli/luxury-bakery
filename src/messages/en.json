@@ -9,6 +9,7 @@
     "gallery": "Gallery",
     "contact": "Contact",
     "reservations": "Reservations",
+    "faq": "FAQ",
     "home": "Home"
   },
   "common": {
@@ -18,6 +19,7 @@
     "submit": "Submit",
     "sending": "Sending…",
     "success": "Message sent successfully",
+    "error": "Something went wrong. Please try again.",
     "bookNow": "Book now",
     "close": "Close",
     "all": "All",
@@ -50,7 +52,42 @@
     "gallerySubtitle": "A glimpse into our atelier",
     "visitTitle": "Visit Sweet Lab",
     "visitSubtitle": "We await you on Via della Spiga",
-    "visitCta": "How to find us"
+    "visitCta": "How to find us",
+    "visitBookCta": "Book a table"
+  },
+  "concierge": {
+    "label": "Quick contact",
+    "book": "Book",
+    "whatsapp": "WhatsApp",
+    "call": "Call"
+  },
+  "press": {
+    "title": "As featured in"
+  },
+  "testimonials": {
+    "title": "Guest voices",
+    "subtitle": "What our visitors say",
+    "goTo": "Go to testimonial"
+  },
+  "offers": {
+    "title": "Seasonal experiences",
+    "subtitle": "Limited editions and curated tastings",
+    "validUntil": "Valid until",
+    "learnMore": "Learn more",
+    "bannerCta": "Reserve your spot",
+    "dismiss": "Dismiss offer banner"
+  },
+  "faq": {
+    "title": "FAQ",
+    "subtitle": "Everything you need to know before your visit",
+    "all": "All",
+    "categories": {
+      "visit": "Visit",
+      "allergens": "Allergens",
+      "custom": "Custom orders",
+      "reservations": "Reservations",
+      "gifts": "Gifts & delivery"
+    }
   },
   "about": {
     "title": "About us",
@@ -100,6 +137,10 @@
   "products": {
     "title": "Creations",
     "subtitle": "The maison catalogue",
+    "inquire": "Inquire about this creation",
+    "relatedTitle": "You may also like",
+    "allergens": "Allergens",
+    "notFound": "Creation not found",
     "categories": {
       "dryPastry": "Dry pastry",
       "mousse": "Mousse",
@@ -131,7 +172,12 @@
     "hoursWeekdays": "Tue–Sat: 8:00 AM–8:00 PM",
     "hoursSunday": "Sun: 9:00 AM–2:00 PM",
     "hoursMonday": "Mon: closed",
-    "mapTitle": "Find us"
+    "mapTitle": "Find us",
+    "directions": "Get directions",
+    "faqLink": "Browse our FAQ",
+    "inquiryTitle": "Inquiry",
+    "inquiryOffer": "Interest",
+    "error": "Unable to send your message. Please try again or call us."
   },
   "reservations": {
     "title": "Reservations",
@@ -142,6 +188,8 @@
     "guests": "Number of guests",
     "notes": "Additional notes",
     "email": "Email",
+    "experienceLabel": "Experience",
+    "error": "Unable to submit your request. Please try again or contact us by phone.",
     "success": "Reservation received. We will contact you within 24 hours."
   },
   "footer": {
@@ -149,6 +197,9 @@
     "hoursTitle": "Hours",
     "contactTitle": "Contact",
     "navTitle": "Navigation",
+    "followUs": "Follow us",
+    "newsletterSuccess": "Thank you for subscribing.",
+    "newsletterError": "Subscription failed. Please try again.",
     "credits": "Images from Unsplash"
   }
 }
