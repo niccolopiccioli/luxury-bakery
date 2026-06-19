@@ -78,9 +78,17 @@
     "dismiss": "Dismiss offer banner"
   },
   "faq": {
-    "title": "FAQ",
-    "subtitle": "Everything you need to know before your visit",
+    "title": "Questions & answers",
+    "subtitle": "Your visit, explained",
+    "heroText": "Everything we wish every guest knew before crossing our threshold — from parking to praline tempering.",
+    "searchPlaceholder": "Search a question…",
+    "noResults": "No questions match your search.",
     "all": "All",
+    "questionsCount": "{count} questions",
+    "stillQuestions": "Still wondering?",
+    "stillQuestionsText": "Our salon team replies within a few hours. For tastings and private events, booking is the fastest route.",
+    "contactCta": "Contact us",
+    "bookCta": "Book a tasting",
     "categories": {
       "visit": "Visit",
       "allergens": "Allergens",
@@ -92,46 +100,141 @@
   "about": {
     "title": "About us",
     "subtitle": "The Sweet Lab story",
-    "heroText": "A pastry laboratory where French precision meets Milanese soul.",
-    "timelineTitle": "Our history",
-    "valuesTitle": "Our values",
-    "teamTitle": "The team",
-    "timeline": {
-      "2018": "Elena Marchetti opens Sweet Lab on Via della Spiga after training in Paris.",
-      "2020": "Introduction of the open kitchen and reservation-only tastings.",
-      "2022": "Recognized as Milan's best artisan patisserie.",
-      "2024": "Expansion of the seasonal line and collaborations with master chocolatiers."
+    "heroText": "A pastry laboratory where French precision meets Milanese soul — and every gram tells a story.",
+    "scrollHint": "Scroll to discover",
+    "manifesto": {
+      "eyebrow": "Our manifesto",
+      "lines": [
+        "We do not chase trends. We chase balance — the moment when texture, temperature and memory align on the palate.",
+        "Every creation begins with a question: what should this taste like at 8 a.m., at room temperature, after the third bite?",
+        "Transparency is our luxury. You watch us work because craft deserves to be seen, not hidden behind closed doors.",
+        "Sweet Lab is not a shop. It is a salon, a laboratory, and a promise that time spent here will be remembered."
+      ]
     },
+    "origin": {
+      "title": "Where it began",
+      "subtitle": "From Parisian kitchens to Via della Spiga",
+      "paragraphs": [
+        "Elena Marchetti spent seven years in Paris — in brigades where butter temperature was measured to the half-degree and where failure was never an option, only a lesson. She returned to Milan with a conviction: the city deserved a patisserie that treated dessert with the same rigour as haute cuisine.",
+        "In 2018 she found a narrow storefront on Via della Spiga. The space was modest; the vision was not. Within months, word spread among chefs, collectors and curious neighbours who peered through the glass at 6 a.m. to watch croissants being laminated by hand.",
+        "What began as a counter and a small laboratory grew into something rarer: a place where guests could sit, taste, ask questions, and leave understanding why a millefeuille takes three days. The open kitchen was not a marketing choice — it was a statement of honesty.",
+        "Today Sweet Lab welcomes visitors from Milan and far beyond. Some come for a single entremets; others return every season for the new menu. All leave with the same impression: that someone, somewhere, cared deeply about their experience."
+      ]
+    },
+    "stats": {
+      "title": "By the numbers",
+      "subtitle": "Precision you can measure",
+      "items": {
+        "recipes": { "value": "47", "suffix": "", "label": "recipes in our permanent collection, each tested dozens of times before reaching the counter" },
+        "suppliers": { "value": "12", "suffix": "", "label": "partner suppliers across France, Sicily and Piedmont — visited personally every season" },
+        "tastings": { "value": "320", "suffix": "+", "label": "guided tastings hosted since we opened the reservation-only salon" },
+        "awards": { "value": "8", "suffix": "", "label": "national and international recognitions for artisan patisserie excellence" }
+      }
+    },
+    "timelineTitle": "Our history",
+    "timelineSubtitle": "Five chapters that shaped the maison",
+    "timeline": {
+      "2018": {
+        "title": "The doors open",
+        "text": "After years in Parisian laboratories, Elena Marchetti opens Sweet Lab on Via della Spiga. The first menu is deliberately small — twelve creations, each perfected before the next is introduced. Lines form before opening; the neighbourhood discovers that pastry can be an event."
+      },
+      "2019": {
+        "title": "The morning ritual",
+        "text": "Sweet Lab introduces its dawn counter: croissants, pain au chocolat and seasonal viennoiserie baked before 7 a.m. Regulars arrive with empty boxes and leave with still-warm layers. The laboratory rhythm becomes part of Milan's morning landscape."
+      },
+      "2020": {
+        "title": "Laboratory visible",
+        "text": "The open kitchen becomes the heart of the experience. Reservation-only tastings let guests sit metres from the pass, ask questions, and taste components before they become a whole. Transparency transforms curiosity into loyalty."
+      },
+      "2022": {
+        "title": "Recognition",
+        "text": "National press and industry peers name Sweet Lab among Milan's finest artisan patisseries. The accolade changes nothing in the recipes — only confirms that patience, ingredient quality and visible craft still matter in a world of shortcuts."
+      },
+      "2024": {
+        "title": "Seasons & collaborations",
+        "text": "The seasonal line expands with limited collections tied to harvest calendars — Bronte pistachio in spring, Piedmont hazelnuts in autumn. Collaborations with master chocolatiers bring exclusive bean-to-bar expressions to the salon for the first time."
+      }
+    },
+    "philosophy": {
+      "eyebrow": "Philosophy",
+      "title": "What we believe",
+      "subtitle": "Five principles that guide every recipe, every service, every morning in the laboratory.",
+      "items": {
+        "01": { "title": "Time is an ingredient", "text": "Resting dough, curing ganache, ageing praliné — we refuse to compress timelines that exist for a reason. A tart that needs forty-eight hours gets forty-eight hours." },
+        "02": { "title": "Source with intention", "text": "We know our butter producer by name. We visit pistachio orchards in Sicily. Chocolate is selected cup by cup, not by brand logo." },
+        "03": { "title": "Teach through taste", "text": "Every tasting is a conversation. We explain lamination, emulsion, tempering — not to impress, but so you leave with a deeper appetite for quality." },
+        "04": { "title": "Seasonality as respect", "text": "We do not serve strawberries in January. Our menu follows nature's calendar because flavour peaks when ingredients are at their moment." },
+        "05": { "title": "Beauty must be edible", "text": "Visual harmony matters — but never at the expense of texture or balance. A creation that photographs well but disappoints on the fork has failed its purpose." }
+      }
+    },
+    "process": {
+      "title": "From idea to counter",
+      "subtitle": "How a Sweet Lab creation is born",
+      "steps": {
+        "01": { "title": "Brief & inspiration", "text": "Every new recipe starts with a brief: flavour memory, seasonal ingredient, or a guest request. Elena sketches proportions before a single gram is weighed." },
+        "02": { "title": "Laboratory trials", "text": "Three to seven iterations in the test kitchen. Each version is tasted blind, annotated, and adjusted — temperature logs included." },
+        "03": { "title": "Brigade training", "text": "When a recipe is approved, the full team replicates it independently. Consistency across shifts is non-negotiable." },
+        "04": { "title": "Salon introduction", "text": "New creations debut quietly — often first to tasting guests, whose feedback shapes the final presentation and portion size." },
+        "05": { "title": "Permanent or seasonal", "text": "Only a fraction join the permanent collection. Others live for a season, then retire — remembered, not repeated." }
+      }
+    },
+    "ingredients": {
+      "title": "Ingredients we swear by",
+      "subtitle": "The foundation of every flavour",
+      "items": {
+        "butter": { "title": "AOP Charentes-Poitou butter", "text": "82% fat, cultured, with the nutty depth that makes laminated dough sing. Delivered twice weekly from Normandy." },
+        "vanilla": { "title": "Bourbon vanilla from Madagascar", "text": "Plump, oily pods scraped by hand. We use both seeds and spent pods — infused into cream for forty-eight hours." },
+        "pistachio": { "title": "Bronte pistachio DOP", "text": "Harvested on volcanic slopes in Sicily. Intense green, almost piney — the backbone of our spring collection." },
+        "chocolate": { "title": "Bean-to-bar selection", "text": "Single-origin couvertures from small producers in Ecuador, Peru and Tanzania — chosen for clarity, not cocoa percentage alone." }
+      }
+    },
+    "valuesTitle": "Our values",
+    "valuesSubtitle": "What we will never compromise",
     "values": {
       "ingredients": {
         "title": "Ingredients",
-        "text": "AOP butter, Bourbon vanilla, Bronte pistachio and selected bean-to-bar chocolate."
+        "text": "AOP butter, Bourbon vanilla, Bronte pistachio and selected bean-to-bar chocolate. We publish allergen information for every creation and will always tell you the origin of what you eat — because trust begins at the source."
       },
       "precision": {
         "title": "Precision",
-        "text": "Every recipe is calibrated to the gram, with thermal control and replicable processes."
+        "text": "Every recipe is calibrated to the gram, with thermal probes in every refrigerator and a logbook for every batch. Pastry is chemistry; we treat it that way — not coldly, but with the respect that repeatable excellence demands."
       },
       "tradition": {
         "title": "Tradition",
-        "text": "Classic techniques of great French patisserie, reinterpreted with contemporary sensitivity."
+        "text": "Classic techniques of great French patisserie — pâte feuilletée, crème pâtissière, ganache montée — reinterpreted with contemporary sensitivity. We honour the masters by learning their methods before we dare to evolve them."
+      },
+      "craft": {
+        "title": "Visible craft",
+        "text": "Our laboratory has no back door for guests. You see the whisk, the marble, the tempered chocolate. We believe that watching something made with care makes it taste better — and we have eight years of smiling faces to prove it."
       }
     },
+    "teamTitle": "The team",
+    "teamSubtitle": "The people behind every creation",
     "team": {
       "elena": {
         "name": "Elena Marchetti",
         "role": "Founder & Chef Pâtissière",
-        "bio": "Trained in Paris, she leads Sweet Lab with scientific vision and artisan passion."
+        "bio": "Trained under Parisian maîtres in the 8th and 16th arrondissements, Elena returned to Milan with a scientific notebook and an artisan's heart. She still tests every new recipe personally and greets regulars by name at the counter each morning.",
+        "quote": "Pastry is patience made visible."
       },
       "marco": {
         "name": "Marco Vitale",
         "role": "Chef Chocolatier",
-        "bio": "Specialist in tempering and praliné, he curates the maison's chocolate line."
+        "bio": "Marco joined Sweet Lab in 2019 after a decade in Turin's finest chocolate ateliers. He oversees tempering curves, praliné textures and the maison's exclusive bean-to-bar collaborations — work that requires the focus of a watchmaker and the palate of a sommelier.",
+        "quote": "Chocolate speaks in temperatures. My job is to listen."
       },
       "sofia": {
         "name": "Sofia Laurent",
         "role": "Salon Manager",
-        "bio": "Welcomes guests and coordinates tastings and private events."
+        "bio": "Half Milanese, half Lyonnaise, Sofia bridges the laboratory and the guest experience. She designs tasting flows, coordinates private events and ensures that every visitor — whether first-time or weekly — feels welcomed into a home, not a transaction.",
+        "quote": "The salon is where craft becomes memory."
       }
+    },
+    "cta": {
+      "title": "Come taste the story",
+      "text": "Book a guided tasting in our laboratory or visit the counter on Via della Spiga. We save a place for the curious.",
+      "book": "Book a tasting",
+      "contact": "Write to us"
     }
   },
   "products": {
